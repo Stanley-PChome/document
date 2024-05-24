@@ -15,6 +15,9 @@ pwd
 mkdir directory
 mkdir -p parent-directory/new-directory    #遞迴建立
 
+建立檔案
+cat > example.txt
+
 刪除檔案或目錄
 rm file
 rm -r directory    # 遞迴刪除目錄
