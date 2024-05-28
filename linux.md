@@ -45,7 +45,7 @@ tail -n 10 file
 
 搜尋檔案或輸出內容
 grep 'abc' file
-grep -rnw '/var/www/html' -e '877' --include \*.php | grep -v 'vendor'
+grep -rnw --include="*.php" 877 /var/www/html | grep -v 'vendor'
 
 -n  #顯示匹配行的行號 
 -r  #遞迴搜尋目錄 
@@ -53,7 +53,8 @@ grep -rnw '/var/www/html' -e '877' --include \*.php | grep -v 'vendor'
 --include="*.txt"  #搜尋特定類型檔案
 --color  #高亮顯示匹配模式
 -c  #顯示匹配行的計數 
--e  #指定多個搜索模式
+-e  #指定多個搜索模式 grep -e "cat" -e "dog" file.txt
+-E  #啟用擴展正規表示式
 -A num  #顯示匹配行及其後的 num 行
 -B num  #顯示匹配行及其前的 num 行
 
