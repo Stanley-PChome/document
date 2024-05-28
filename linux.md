@@ -1,6 +1,5 @@
 ## 檔案和目錄操作
 ```
-
 顯示目錄內容
 ls -l    #縮寫ll
 
@@ -36,7 +35,6 @@ mv file /new/path
 
 ## 檔案內容處理
 ```
-
 分頁顯示檔案內容
 less file
 
@@ -85,7 +83,6 @@ free -h  # 轉換空間單位
 
 ## 檔案權限與擁有權
 ```
-
 變更檔案權限
 chmod 755 file
 
@@ -96,7 +93,6 @@ chown user:group file
 
 ## 網路相關
 ```
-
 測試網路連接
 ping example.com
 
@@ -107,7 +103,6 @@ ssh user@hostname
 
 ## 安裝與管理 Ubuntu
 ```
-
 sudo apt-get update  # 更新軟體
 sudo apt-get upgrade  # 升級所有安裝軟體
 sudo apt-get install package_name  # 安裝軟體
