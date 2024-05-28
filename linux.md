@@ -58,7 +58,10 @@ grep -rnw --include="*.php" 877 /var/www/html | grep -v 'vendor'
 -A num  #顯示匹配行及其後的 num 行
 -B num  #顯示匹配行及其前的 num 行
 
+```
 
+## 系統資訊
+```
 顯示系統Process(動態)
 top
 
@@ -78,7 +81,7 @@ du -h  # 轉換空間單位
 free
 free -h  # 轉換空間單位
 
-``` 
+```
 
 ## 檔案權限與擁有權
 ```
@@ -91,7 +94,7 @@ chown user:group file
 
 ```
 
-## 網路相關指令
+## 網路相關
 ```
 
 測試網路連接
@@ -102,7 +105,7 @@ ssh user@hostname
 
 ```
 
-## 安裝與管理指令 Ubuntu
+## 安裝與管理 Ubuntu
 ```
 
 sudo apt-get update  # 更新軟體
