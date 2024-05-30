@@ -41,6 +41,9 @@ less file
 持續輸出檔案最後幾行內容
 tail -n 10 file
 
+-n k  #顯示最後k行
+-f  #持續輸出檔案內容
+
 搜尋檔案或輸出內容
 grep 'abc' file
 grep -rnw --include="*.php" 877 /var/www/html | grep -v 'vendor'
@@ -109,4 +112,3 @@ sudo apt-get install package_name  # 安裝軟體
 sudo apt-get remove package_name  # 刪除軟體
 
 ```
-
