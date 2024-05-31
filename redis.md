@@ -123,6 +123,27 @@ rpush key value [value2...]
   標籤系統：儲存用戶標籤、文章標籤等。
   共同好友：計算兩個用戶的共同好友。
   唯一訪問計數：統計唯一訪問者，如每天的唯一訪問IP。
+
+集合加入一個或多個成員
+sadd key member1 [member2...]
+
+獲取集合總數
+scard key
+
+回傳集合差集
+sdiff key key2
+
+回傳集合交集
+sinter key key2
+
+回傳集合聯集
+sunion key key2
+
+檢查member是否存在集合中
+sismember key member
+
+回傳集合所有成員
+smembers key
 ```
 
 ## Sorted Set
