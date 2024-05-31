@@ -1,4 +1,4 @@
-## Git
+## 基礎
 ```
 建立新的本地端 Repository
 git init
@@ -36,6 +36,8 @@ git fetch <remote-name>
 獲取指定遠端 Repository 特定 branch 更新
 git fetch <remote-name> <branch-name>
 
+## branch
+```
 顯示分支
 git branch
 
@@ -52,7 +54,10 @@ git branch -D <branch-name>
 -r  #列出遠端遠端
 -m <old-branch-name> <new-branch-name>  #修改分支名稱
 --no-merged  #顯示尚未合併當前分支的所有分支
+```
 
+## checkout
+```
 切換至該分支
 git checkout <branch-name>
 
@@ -61,7 +66,10 @@ git checkout -b <branch-name>
 
 切換至該 commit
 git checkout <hash>
+```
 
+## pull
+```
 遠端Repository拉取並合併至當前分支(git fetch和git merge的合併)
 git pull
 
@@ -88,13 +96,19 @@ git push <remote-name> --delete <branch-name>
 
 發佈本地指定分支到遠端分支
 git push <remote-name> <local-branch-name>:<remote-branch-name>
+```
 
+## merge
+```
 合併指定分支至當前分支
 git merge <branch-name>
 
 當前分支轉移指定分支上
 git rebase <branch-name>
+```
 
+## reabse
+```
 rebase出現衝突，需要手動解决衝突後繼續rebase
 git rebase --continue
 
@@ -103,9 +117,10 @@ git rebase --abort
 
 交互式 rebase (重新排序提交、合并提交、修改提交消息)
 git rebase -i <commit>
+```
 
+## reset
+```
 強制恢復到指定的 commit（透過 Hash 值）
 git reset --hard [HASH]
-
-
 ``` 
