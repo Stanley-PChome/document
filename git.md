@@ -48,11 +48,10 @@ git branch -d <branch-name>
 强制删除本地分支
 git branch -D <branch-name>
 
-修改分支名稱
-git branch -m <old-branch-name> <new-branch-name>
-
-顯示尚未合併當前分支的所有分支
-git branch --no-merged
+-a  #列出所有分支，包含本地與遠端
+-r  #列出遠端遠端
+-m <old-branch-name> <new-branch-name>  #修改分支名稱
+--no-merged  #顯示尚未合併當前分支的所有分支
 
 切換至該分支
 git checkout <branch-name>
