@@ -51,7 +51,7 @@ git branch -D <branch-name>
 修改分支名稱
 git branch -m <old-branch-name> <new-branch-name>
 
-顯示所有未合併的分支
+顯示尚未合併當前分支的所有分支
 git branch --no-merged
 
 切換至該分支
