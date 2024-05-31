@@ -103,13 +103,13 @@ git push <remote-name> <local-branch-name>:<remote-branch-name>
 ```
 合併指定分支至當前分支
 git merge <branch-name>
-
-當前分支轉移指定分支上
-git rebase <branch-name>
 ```
 
 ## reabse
 ```
+當前分支轉移指定分支上
+git rebase <branch-name>
+
 rebase出現衝突，需要手動解决衝突後繼續rebase
 git rebase --continue
 
