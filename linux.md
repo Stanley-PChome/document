@@ -112,3 +112,9 @@ sudo apt-get install package_name  # 安裝軟體
 sudo apt-get remove package_name  # 刪除軟體
 
 ```
+
+#其他
+```
+service --status-all
+```
+
