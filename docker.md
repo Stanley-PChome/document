@@ -5,6 +5,12 @@ docker version
 登入docker hub
 docker login
 
+登出docker hub
+docker logout
+
+列出本機images
+docker images
+
 取得images
 docker pull <images-name>
 
@@ -17,6 +23,8 @@ docker ps
 docker run -it <images-name>
 
 -it  #進入container shell下指令
+-d  #container後台運作
+-p <port>:<container-port>  #container內部使用的port映射至主機
 --name  #別名
 
 #啟動容器
@@ -34,5 +42,10 @@ docker exec <container-id>  #退出後不會停止容器
 
 #刪除容器
 docker rm -f <container-id>
+
+#查詢容器log
+docker logs
+
+-f  #持續更新輸出
 
 ```
