@@ -19,6 +19,9 @@ docker ps
 
 -a  #所有container
 
+#建立容器
+docker create <images-name>
+
 #建立並啟動容器
 docker run -it <images-name>
 
@@ -46,6 +49,9 @@ docker exec -it <container-id> /bin/bash  #退出後不會停止容器
 docker rm <container-id>
 -f  #強制刪除
 
+#刪除映像檔
+docker rmi <image-name>
+
 #查看容器內的資訊
 docker logs
 
@@ -63,9 +69,13 @@ FROM  #docker 映像檔名稱
 
 MAINTAINER  #說明撰寫和維護人資訊
 
-RUN  #執行安裝和設定
+RUN  #執行指令
 
-ENV  #設定環境變數
+ARG  #設定參數(Dockerfile中使用)
+
+ENV  #設定環境變數(容器中使用)
+
+VOLUME  #持久化資料
 ```
 
 Compose
