@@ -43,7 +43,8 @@ docker attach <container-id>  #退出後會停止容器
 docker exec -it <container-id> /bin/bash  #退出後不會停止容器
 
 #刪除容器
-docker rm -f <container-id>
+docker rm <container-id>
+-f  #強制刪除
 
 #查看容器內的資訊
 docker logs
@@ -58,4 +59,19 @@ docker search ubuntu
 
 Dockerfile 
 ```
+FROM  #docker 映像檔名稱
+
+MAINTAINER  #說明撰寫和維護人資訊
+
+RUN  #執行安裝和設定
+
+ENV  #設定環境變數
+```
+
+Compose
+```
+
+docker-compose up -d
+
+docker-compose ps
 ```
