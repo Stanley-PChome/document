@@ -30,22 +30,32 @@ docker run -it <images-name>
 #啟動容器
 docker start <container-id>
 
+-a  #前景觀看輸出
+
 #停止容器
 docker stop <container-id>
 
 #重啟容器
 docker restart <container-id>
 
-#進入後台
+#進入容器
 docker attach <container-id>  #退出後會停止容器
-docker exec <container-id>  #退出後不會停止容器
+docker exec -it <container-id> /bin/bash  #退出後不會停止容器
 
 #刪除容器
 docker rm -f <container-id>
 
-#查詢容器log
+#查看容器內的資訊
 docker logs
 
 -f  #持續更新輸出
 
+#查詢映像檔
+docker search ubuntu
+-f is-official=true #過濾指返回官方映像檔
+
+```
+
+###Dockerfile 
+```
 ```
