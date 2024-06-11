@@ -28,6 +28,7 @@ docker run -it <images-name>
 -it  #進入container shell下指令
 -d  #container後台運作
 -p <port>:<container-port>  #container內部使用的port映射至主機
+-v  #掛載 volume 至容器中
 --name  #別名
 
 #啟動容器
