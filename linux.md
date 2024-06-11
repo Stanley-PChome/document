@@ -115,6 +115,9 @@ sudo apt-get remove package_name  # 刪除軟體
 
 #其他
 ```
+查詢版本
+uname -a
+
 service --status-all
 ```
 
