@@ -54,7 +54,7 @@ docker rm <container-id>
 docker rmi <image-name>
 
 #查看容器內的資訊
-docker logs
+docker logs <container-id>
 
 -f  #持續更新輸出
 
