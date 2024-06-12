@@ -118,6 +118,9 @@ sudo apt-get remove package_name  # 刪除軟體
 查詢版本
 uname -a
 
+查詢特定工具位置
+whereis <name>
+
 service --status-all
 ```
 
