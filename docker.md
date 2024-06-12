@@ -29,7 +29,9 @@ docker run -it <images-name>
 -d  #container後台運作
 -p <port>:<container-port>  #container內部使用的port映射至主機
 -v  #掛載 volume 至容器中
+-e  HOST=127.0.0.1  #設定環境變數
 --name  #別名
+--network <network-name>  #指定網路設定
 
 #啟動容器
 docker start <container-id>
@@ -57,6 +59,15 @@ docker rmi <image-name>
 docker logs <container-id>
 
 -f  #持續更新輸出
+
+#建立虛擬網路
+docker network create <network-name>
+
+#顯示所有network
+docker network ls
+
+#查看env並刪除
+docker run --rm <image-name> env
 
 #查詢映像檔
 docker search ubuntu
