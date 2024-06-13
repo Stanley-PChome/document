@@ -66,6 +66,9 @@ docker network create <network-name>
 #顯示所有network
 docker network ls
 
+#容器加入虛擬網路
+docker network connect <network-name> <container-name or container-id>
+
 #查看env並刪除
 docker run --rm <image-name> env
 
@@ -88,12 +91,71 @@ ARG  #設定參數(Dockerfile中使用)
 ENV  #設定環境變數(容器中使用)
 
 VOLUME  #持久化資料
+
+範例
+FROM ubuntu:20.04
+
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    apache2 \
+    php7.4 \
+    libapache2-mod-php7.4 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+
+COPY index.php /var/www/html/index.php
+
+EXPOSE 80
+
+CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 
 Compose
 ```
-
 docker-compose up -d
 
 docker-compose ps
+
+yml格式
+services
+  <container-name>
+    image: <image-name>  #鏡像名稱
+    environment: <var>  #環境變數
+    networks: - <network-name>  #虛擬網路名稱
+    ports: - <local-port>:<container-port>
+    depends_on: - <container-name>  #依賴的容器
+    volumes: <path>  #共用的目錄位置
+    working_dir: <paht>  #切至工作的目錄
+networks
+  <network-name>
+    driver: <type>  #bridge:容器可以連接到這個網絡並與主機以及其他容器通信
+
+yml範例
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    networks:
+      - my-network
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
+
 ```
