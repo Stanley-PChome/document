@@ -41,41 +41,41 @@ docker start <container-id>
 
 -a  #前景觀看輸出
 
-#停止容器
+停止容器
 docker stop <container-id>
 
-#重啟容器
+重啟容器
 docker restart <container-id>
 
-#進入容器
+進入容器
 docker attach <container-id>  #退出後會停止容器
 docker exec -it <container-id> /bin/bash  #退出後不會停止容器
 
-#刪除容器
+刪除容器
 docker rm <container-id>
 -f  #強制刪除
 
-#刪除映像檔
+刪除映像檔
 docker rmi <image-name>
 
-#查看容器內的資訊
+查看容器內的資訊
 docker logs <container-id>
 
 -f  #持續更新輸出
 
-#建立虛擬網路
+建立虛擬網路
 docker network create <network-name>
 
-#顯示所有network
+顯示所有network
 docker network ls
 
-#容器加入虛擬網路
+容器加入虛擬網路
 docker network connect <network-name> <container-name or container-id>
 
-#查看env並刪除
+查看env並刪除
 docker run --rm <image-name> env
 
-#查詢映像檔
+查詢映像檔
 docker search ubuntu
 -f is-official=true #過濾指返回官方映像檔
 
@@ -83,6 +83,9 @@ docker search ubuntu
 
 Dockerfile 
 ```
+建立 Dockerfile
+docker build
+
 FROM  #docker 映像檔名稱
 
 MAINTAINER  #說明撰寫和維護人資訊
