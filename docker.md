@@ -14,6 +14,9 @@ docker images
 取得images
 docker pull <images-name>
 
+推至docker hub
+docker push <images-name>
+
 查看運行中的 container
 docker ps
 
