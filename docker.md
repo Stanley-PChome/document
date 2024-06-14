@@ -159,6 +159,11 @@ services:
       - mysql
     networks:
       - my-network
+    volumes:
+      - ./php-app:/var/www/html
+
+volumes:
+  php-app:
 
 networks:
   my-network:
