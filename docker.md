@@ -106,6 +106,7 @@ RUN apt-get update \
     apache2 \
     php7.4 \
     libapache2-mod-php7.4 \
+    php-mysql \
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
