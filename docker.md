@@ -84,7 +84,7 @@ docker search ubuntu
 Dockerfile 
 ```
 建立 Dockerfile
-docker build
+docker build -t <tag-name> <path>
 
 FROM  #docker 映像檔名稱
 
