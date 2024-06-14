@@ -159,6 +159,13 @@ services:
       - mysql
     networks:
       - my-network
+
+  ubuntu:
+    image: my-ubuntu
+    ports:
+      - 80:80
+    networks:
+      - my-network
     volumes:
       - ./php-app:/var/www/html
 
