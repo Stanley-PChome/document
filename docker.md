@@ -72,6 +72,9 @@ docker network ls
 容器加入虛擬網路
 docker network connect <network-name> <container-name or container-id>
 
+容器IP
+docker inspect <container-id> | findstr '"IPAddress"'
+
 查看env並刪除
 docker run --rm <image-name> env
 
