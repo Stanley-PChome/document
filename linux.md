@@ -121,6 +121,7 @@ uname -a
 查詢特定工具位置
 whereis <name>
 
+顯示系統運行的服務狀態
 service --status-all
 ```
 
