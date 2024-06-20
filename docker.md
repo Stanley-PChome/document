@@ -151,8 +151,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 123
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    ports:
+      - 3306:3306
     networks:
       - my-network
+    volumes:
+      - ./mysql/data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin
@@ -171,6 +175,8 @@ services:
       - 80:80
     networks:
       - my-network
+    depends_on:
+      - mysql
     volumes:
       - ./php-app:/var/www/html
 
