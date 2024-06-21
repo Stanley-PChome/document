@@ -76,7 +76,7 @@ docker network connect <network-name> <container-name or container-id>
 docker inspect <container-id> | findstr '"IPAddress"'
 
 容器共用實體位置
- docker inspect -f '{{.Mounts}}' <container-id>
+docker inspect -f '{{.Mounts}}' <container-id>
 
 查看env並刪除
 docker run --rm <image-name> env
