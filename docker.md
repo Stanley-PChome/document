@@ -130,8 +130,10 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 
 Compose
 ```
+#執行yml檔
 docker-compose up -d
 
+顯示docker-compose安裝的images 
 docker-compose ps
 
 yml格式
