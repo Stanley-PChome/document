@@ -100,6 +100,9 @@ hset key field value
 獲得列表索引中的元素
 lindex key index
 
+獲得列表範圍索引的元素
+lrange key start end
+
 獲得列表長度
 llen key
 
