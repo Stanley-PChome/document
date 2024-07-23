@@ -32,17 +32,6 @@ docker ps
 #建立容器
 docker create <images-name>
 
-#建立並啟動容器
-docker run -it <images-name>
-
--it  #進入container shell下指令
--d  #container後台運作
--p <port>:<container-port>  #container內部使用的port映射至主機
--v  /host/path:/container/path #掛載 volume 至容器中
--e  HOST=127.0.0.1  #設定環境變數
---name  #別名
---network <network-name>  #指定網路設定
-
 #啟動容器
 docker start <container-id>
 
@@ -53,6 +42,17 @@ docker stop <container-id>
 
 重啟容器
 docker restart <container-id>
+
+#建立並啟動容器
+docker run -it <images-name>
+
+-it  #進入container shell下指令
+-d  #container後台運作
+-p <port>:<container-port>  #container內部使用的port映射至主機
+-v  /host/path:/container/path #掛載 volume 至容器中
+-e  HOST=127.0.0.1  #設定環境變數
+--name  #別名
+--network <network-name>  #指定網路設定
 
 進入容器
 docker attach <container-id>  #退出後會停止容器
