@@ -43,13 +43,22 @@ docker stop <container-id>
 重啟容器
 docker restart <container-id>
 
+#建立儲存空間
+docker volume create <volume-name>
+
+#顯示所有儲存空間
+docker volume ls
+
+#刪除儲存空間
+docker volume rm <volume-name>
+
 #建立並啟動容器
 docker run -it <images-name>
 
 -it  #進入container shell下指令
 -d  #container後台運作
 -p <port>:<container-port>  #container內部使用的port映射至主機
--v  /host/path:/container/path #掛載 volume 至容器中
+-v  <volume-name>:<path> #掛載 volume 至容器中
 -e  HOST=127.0.0.1  #設定環境變數
 --name  #別名
 --network <network-name>  #指定網路設定
