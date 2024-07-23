@@ -100,7 +100,7 @@ chown user:group file
 ping example.com
 
 使用ssh連至遠端主機
-ssh user@hostname
+ssh user@host -p port
 
 ```
 
