@@ -8,6 +8,10 @@ docker login
 登出docker hub
 docker logout
 
+查詢映像檔
+docker search ubuntu
+-f is-official=true #過濾指返回官方映像檔
+
 列出本機images
 docker images
 
@@ -83,10 +87,6 @@ docker inspect -f '{{.Mounts}}' <container-id>
 
 查看env並刪除
 docker run --rm <image-name> env
-
-查詢映像檔
-docker search ubuntu
--f is-official=true #過濾指返回官方映像檔
 
 ```
 
