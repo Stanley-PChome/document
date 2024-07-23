@@ -18,6 +18,9 @@ docker images
 取得images
 docker pull <images-name>
 
+建立標籤
+docker tag <source-images> <target-images>
+
 推至docker hub
 docker push <username>/<images-name>
 
