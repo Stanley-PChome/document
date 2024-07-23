@@ -38,7 +38,7 @@ docker run -it <images-name>
 -it  #進入container shell下指令
 -d  #container後台運作
 -p <port>:<container-port>  #container內部使用的port映射至主機
--v  #掛載 volume 至容器中
+-v  /host/path:/container/path #掛載 volume 至容器中
 -e  HOST=127.0.0.1  #設定環境變數
 --name  #別名
 --network <network-name>  #指定網路設定
