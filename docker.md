@@ -11,6 +11,10 @@ docker logout
 列出本機images
 docker images
 
+查詢映像檔
+docker search ubuntu
+-f is-official=true #過濾指返回官方映像檔
+
 取得images
 docker pull <images-name>
 
@@ -83,10 +87,6 @@ docker inspect -f '{{.Mounts}}' <container-id>
 
 查看env並刪除
 docker run --rm <image-name> env
-
-查詢映像檔
-docker search ubuntu
--f is-official=true #過濾指返回官方映像檔
 
 ```
 
