@@ -147,7 +147,7 @@ COPY index.php /var/www/html/index.php
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 
-Compose
+docker-compose
 ```
 #執行yml檔
 docker-compose up -d
