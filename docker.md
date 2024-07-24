@@ -135,6 +135,8 @@ RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 COPY index.php /var/www/html/index.php
 
+#VOLUME ["/storage1", "/storage2", "/storage2"]
+
 #EXPOSE 80
 
 CMD ["apachectl", "-D", "FOREGROUND"]
