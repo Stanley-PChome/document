@@ -123,5 +123,7 @@ whereis <name>
 
 顯示系統運行的服務狀態
 service --status-all
-```
 
+Windows 進入wsl2
+explorer.exe .
+```
