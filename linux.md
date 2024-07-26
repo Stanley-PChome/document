@@ -125,5 +125,6 @@ whereis <name>
 service --status-all
 
 Windows 進入wsl2
-explorer.exe .
+explorer.exe . #或者在windows資料夾路徑改\\wsl$\Ubuntu
+
 ```
