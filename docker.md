@@ -163,10 +163,10 @@ RUN python3 -m venv /venv # 創建虛擬環境
 RUN /venv/bin/pip install --upgrade pip # 使用虛擬環境中的 pip 安裝套件
 RUN /venv/bin/pip install Django 
 
-RUN mkdir -p /var/www/html 
-WORKDIR /var/www/html
+#RUN mkdir -p /var/www/html 
+#WORKDIR /var/www/html
 
-RUN /venv/bin/django-admin startproject mysite
+#RUN /venv/bin/django-admin startproject mysite
 
 WORKDIR /var/www/html/mysite
 
