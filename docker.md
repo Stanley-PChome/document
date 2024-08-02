@@ -227,6 +227,7 @@ services:
 
   ubuntu:
     image: my-ubuntu
+    #build: .
     ports:
       - 80:80
     networks:
