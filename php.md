@@ -1,3 +1,5 @@
+## 筆記
+```
 array
 
 array_chunk
@@ -71,3 +73,7 @@ __CLASS__
 __METHOD__
 
 __FUNCTION__
+
+```
+
+
