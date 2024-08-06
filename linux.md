@@ -47,6 +47,7 @@ tail -n 10 file
 搜尋檔案或輸出內容
 grep 'abc' file
 grep -rnw --include="*.php" 877 /var/www/html | grep -v 'vendor'
+zgrep
 
 -n  #顯示匹配行的行號 
 -r  #遞迴搜尋目錄 
