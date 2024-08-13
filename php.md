@@ -4,7 +4,7 @@ array
 
 array_chunk
 
-array_colume 
+array_column 
 
 array_diff 差集
 
