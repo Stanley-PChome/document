@@ -84,6 +84,7 @@ __FUNCTION__
 
 ## 2. Union Types
 ```php
+#int float string bool array object null callable iterable
 function foo(int|float $number): int|float {
     return $number;
 }
