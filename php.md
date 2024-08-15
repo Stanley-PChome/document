@@ -76,6 +76,218 @@ __FUNCTION__
 
 ```
 
+# PHP 7.0
+## Scalar Type Declarations
+```
+function addNumbers(int $a, int $b): int {
+    return $a + $b;
+}
+
+echo addNumbers(5, 10); // 輸出 15
+```
+
+## Return Type Declarations
+```
+function getName(): string {
+    return 'John Doe';
+}
+```
+
+## Null Coalesce Operator
+```
+$name = $_GET['name'] ?? 'Guest';
+```
+
+## Spaceship Operator
+```
+$result = 1 <=> 2; // 返回 -1
+$result = 2 <=> 2; // 返回 0
+$result = 3 <=> 2; // 返回 1
+```
+
+## Constant Arrays
+```
+define('FRUITS', ['apple', 'banana', 'cherry']);
+echo FRUITS[1]; // 輸出 'banana'
+```
+
+## Anonymous Classes
+```
+$object = new class {
+    public function greet() {
+        return 'Hello, World!';
+    }
+};
+
+echo $object->greet(); // 輸出 'Hello, World!'
+```
+
+## Group Use Declarations
+```
+use MyNamespace\{ClassA, ClassB, ClassC as C};
+```
+
+## Error Handling Improvements
+```
+try {
+    // 一些可能導致錯誤的代碼
+} catch (\Throwable $e) {
+    echo 'Caught: ' . $e->getMessage();
+}
+```
+
+# PHP 7.1
+## Nullable Types
+```
+function setAge(?int $age): void {
+    // $age 可以是 int 或 null
+}
+
+setAge(25);  // 有效
+setAge(null); // 也有效
+```
+
+## Void Return Type
+```
+function sayHello(): void {
+    echo "Hello";
+    // 沒有 return 語句，或者 return; 也是允許的
+}
+```
+
+## Class Constant Visibility
+```
+class MyClass {
+    private const PRIVATE_CONST = 'private';
+    protected const PROTECTED_CONST = 'protected';
+    public const PUBLIC_CONST = 'public';
+}
+```
+
+## Multi-catch Exception Handling
+```
+try {
+    // 可能拋出異常的代碼
+} catch (FirstException | SecondException $e) {
+    echo "Caught exception: " . get_class($e);
+}
+```
+
+## Support for Keys in List
+```
+$data = [
+    ['id' => 1, 'name' => 'John'],
+    ['id' => 2, 'name' => 'Jane'],
+];
+
+foreach ($data as ['id' => $id, 'name' => $name]) {
+    echo "$id: $name\n";
+}
+```
+
+## Asynchronous Signal Handling
+```
+pcntl_async_signals(true); // 啟用異步信號處理
+
+pcntl_signal(SIGINT, function() {
+    echo "SIGINT caught!";
+});
+
+while (true) {
+    sleep(1);
+}
+```
+
+## Square Bracket Syntax for Array Destructuring
+```
+[$a, $b] = [1, 2];
+echo $a; // 輸出 1
+echo $b; // 輸出 2
+```
+
+# PHP 7.2
+## Object Type Hinting
+```
+function setObject(object $obj): void {
+    // 這個函數只能接受對象作為參數
+}
+
+setObject(new stdClass()); // 有效
+setObject("string"); // 無效，會拋出錯誤
+```
+
+# PHP 7.3
+## JSON
+```
+$json = json_decode('{"key":"value"}');
+if (json_last_error() === JSON_ERROR_NONE) {
+    echo "Valid JSON";
+}
+```
+
+## Trailing Comma in Function Calls
+```
+function foo($a, $b, $c) {
+    // Some code
+}
+
+foo(1, 2, 3,); // 允許尾隨逗號
+```
+
+# PHP 7.4
+## Typed Properties
+```
+class User {
+    public int $id;
+    public string $name;
+}
+
+$user = new User();
+$user->id = 1;
+$user->name = "John Doe";
+```
+
+## Arrow Functions
+```
+$numbers = [1, 2, 3, 4];
+$squares = array_map(fn($n) => $n ** 2, $numbers);
+print_r($squares); // 輸出 [1, 4, 9, 16]
+```
+
+## Null Coalescing Assignment Operator
+```
+$data['key'] ??= 'default';
+```
+
+## Spread Operator in Array Expression
+```
+$array1 = [1, 2, 3];
+$array2 = [4, 5, 6];
+$combined = [...$array1, ...$array2];
+print_r($combined); // 輸出 [1, 2, 3, 4, 5, 6]
+```
+
+## Covariant Returns and Contravariant Parameters
+```
+class Animal {}
+class Dog extends Animal {}
+
+interface Factory {
+    function make(): Animal;
+}
+
+class DogFactory implements Factory {
+    public function make(): Dog { // 協變返回類型
+        return new Dog();
+    }
+}
+```
+
+## Numeric Literal Separator
+```
+$price = 1_000_000; // 相當於 1000000
+```
+
 # PHP 8.0
 
 ## JIT
