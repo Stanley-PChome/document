@@ -138,4 +138,12 @@ $country = $session?->user?->getAddress()?->country;
 $value = $foo ?? throw new Exception('Invalid value');
 ```
 
+# PHP 8.1
+## Union Types
+```php
+#int float string bool array object null callable iterable
+function foo(int|float $number): int|float {
+    return $number;
+}
+```
 
