@@ -78,7 +78,7 @@ __FUNCTION__
 
 ```
 
-# php7
+# PHP7
 ## Scalar Type Declarations
 ```
 function addNumbers(int $a, int $b): int {
