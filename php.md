@@ -85,14 +85,14 @@ __FUNCTION__
 ```
 
 ## Union Types
-```
+```php
 function foo(int|float $number): int|float {
     return $number;
 }
 ```
 
 ## Named Arguments
-```
+```php
 function foo($a, $b, $c) {
   return "{$a}-{$b}-{$c}";
 }
