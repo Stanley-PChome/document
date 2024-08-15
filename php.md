@@ -77,20 +77,25 @@ __FUNCTION__
 ```
 
 # PHP 8.0
-JIT
+```
 ```
 
+##JIT
+```
+```
 
-Union Types
+##Union Types
+```
 function foo(int|float $number): int|float {
     return $number;
 }
+```
 
-Named Arguments
-  function foo($a, $b, $c) {
-      return "{$a}-{$b}-{$c}";
-  }
-  
-  echo foo(a: 1, c: 3, b: 2);
+##Named Arguments
+```
+function foo($a, $b, $c) {
+  return "{$a}-{$b}-{$c}";
+}
 
+echo foo(a: 1, c: 3, b: 2);
 ```
