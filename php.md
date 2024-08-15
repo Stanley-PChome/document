@@ -172,3 +172,100 @@ var_dump(UserName::ADMIN->name); // ADMIN
 var_dump(UserName::ADMIN->value);// admin
 ```
 
+## Readonly Properties
+```php
+class User {
+    public readonly string $name;
+
+    public function __construct(string $name) {
+        $this->name = $name;
+    }
+}
+
+$user = new User('John');
+echo $user->name; // John
+// $user->name = 'Jane'; // 將會拋出錯誤
+```
+
+## First-Class Callable Syntax
+```php
+class MyClass {
+    public function sayHello(): void {
+        echo 'Hello';
+    }
+}
+
+$obj = new MyClass();
+$callback = $obj->sayHello(...);
+$callback(); // 輸出 'Hello'
+```
+
+## Fibers
+```php
+#實現協程（coroutines）和更高效的異步編程
+$fiber = new Fiber(function (): void {
+    echo "Fiber started\n";
+    Fiber::suspend();
+    echo "Fiber resumed\n";
+});
+
+$fiber->start(); // 輸出 "Fiber started"
+$fiber->resume(); // 輸出 "Fiber resumed"
+```
+
+## Fibers
+```php
+#實現協程（coroutines）和更高效的異步編程
+$fiber = new Fiber(function (): void {
+    echo "Fiber started\n";
+    Fiber::suspend();
+    echo "Fiber resumed\n";
+});
+
+$fiber->start(); // 輸出 "Fiber started"
+$fiber->resume(); // 輸出 "Fiber resumed"
+```
+
+## Array Unpacking with String Keys
+```php
+$array1 = ['foo' => 'bar'];
+$array2 = ['baz' => 'qux'];
+
+$result = [...$array1, ...$array2];
+print_r($result); // 輸出 Array ( [foo] => bar [baz] => qux )
+```
+
+## Null Coalescing Assignment Operator
+```php
+$array = ['name' => 'John'];
+$array['name'] ??= 'Doe'; // 會保留 'John'
+$array['age'] ??= 30; // 會設置 'age' 為 30
+print_r($array); // 輸出 Array ( [name] => John [age] => 30 )
+```
+
+## Intersection Types
+```php
+interface A {}
+interface B {}
+
+function process(A&B $value): void {
+    // 處理同時實現 A 和 B 的對象
+}
+```
+
+## Final 
+```php
+#防止繼承或覆寫
+final class FinalClass {
+    public function doSomething(): void {}
+}
+
+// 這樣會報錯
+// class ExtendedClass extends FinalClass {}
+```
+
+# PHP 8.1
+## 
+```php
+
+```
