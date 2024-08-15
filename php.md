@@ -264,8 +264,64 @@ final class FinalClass {
 // class ExtendedClass extends FinalClass {}
 ```
 
-# PHP 8.1
+# PHP 8.2
+## Read-Only Classes
+```php
+readonly class User {
+    public string $name;
+    public function __construct(string $name) {
+        $this->name = $name;
+    }
+}
+```
+
+## Disjunctive Normal Form (DNF) Types
+```php
+function example((A&B)|C $input): void {
+    // 这里 $input 可以是 (A&B) 或 C 类型
+}
+```
+
+## Traits 
+```php
+trait MyTrait {
+    public const MY_CONSTANT = 'value';
+}
+
+class MyClass {
+    use MyTrait;
+}
+
+echo MyClass::MY_CONSTANT; // 输出 'value'
+```
+
+## Traits 
+```php
+trait MyTrait {
+    public const MY_CONSTANT = 'value';
+}
+
+class MyClass {
+    use MyTrait;
+}
+
+echo MyClass::MY_CONSTANT; // 输出 'value'
+```
+
+## Dynamic Properties Deprecated
+```php
+class User {
+    public string $name;
+}
+
+$user = new User();
+$user->name = 'John'; // 正常
+$user->age = 30; // 在 PHP 8.2 中将触发一个弃用警告
+```
+
+# PHP 8.3
 ## 
 ```php
 
 ```
+
