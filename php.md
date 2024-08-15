@@ -95,5 +95,26 @@ function foo($a, $b, $c) {
   return "{$a}-{$b}-{$c}";
 }
 
-echo foo(a: 1, c: 3, b: 2);
+foo(a: 1, c: 3, b: 2);
 ```
+
+## Constructor Property Promotion
+```php
+class Point {
+    public function __construct(
+        public float $x = 0.0,
+        public float $y = 10.0,
+    ) {}
+}
+```
+
+## Match
+```php
+$result = match ($status) {
+    1 => 'First',
+    2 => 'Second',
+    default => 'Unknown',
+};
+```
+
+
