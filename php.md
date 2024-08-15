@@ -1,4 +1,4 @@
-[跳到子標題](#PHP7)
+[跳到子標題](#PHP7.1)
 
 ## 筆記
 ```
@@ -78,7 +78,7 @@ __FUNCTION__
 
 ```
 
-# PHP7
+# PHP7.1
 ## Scalar Type Declarations
 ```
 function addNumbers(int $a, int $b): int {
