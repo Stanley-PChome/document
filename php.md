@@ -78,18 +78,18 @@ __FUNCTION__
 
 # PHP 8.0
 
-## 1.JIT
+## 1. JIT
 ```
 ```
 
-## 2.Union Types
+## 2. Union Types
 ```php
 function foo(int|float $number): int|float {
     return $number;
 }
 ```
 
-## 3.Named Arguments
+## 3. Named Arguments
 ```php
 function foo($a, $b, $c) {
   return "{$a}-{$b}-{$c}";
@@ -98,7 +98,7 @@ function foo($a, $b, $c) {
 foo(a: 1, c: 3, b: 2);
 ```
 
-## 4.Constructor Property Promotion
+## 4. Constructor Property Promotion
 ```php
 class Point {
     public function __construct(
@@ -108,7 +108,7 @@ class Point {
 }
 ```
 
-## 5.Match
+## 5. Match
 ```php
 $result = match ($status) {
     1 => 'First',
