@@ -76,9 +76,10 @@ __FUNCTION__
 
 ```
 
-## PHP 8.0
-```
+##### PHP 8.0
 JIT
+```
+
 
 Union Types
 function foo(int|float $number): int|float {
