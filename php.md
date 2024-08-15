@@ -139,11 +139,36 @@ $value = $foo ?? throw new Exception('Invalid value');
 ```
 
 # PHP 8.1
-## Union Types
+## Enumerations
 ```php
-#int float string bool array object null callable iterable
-function foo(int|float $number): int|float {
-    return $number;
+enum Status {
+    case Pending;
+    case Approved;
+    case Rejected;
 }
+
+// 使用枚舉
+function handleStatus(Status $status): void {
+    switch ($status) {
+        case Status::Pending:
+            // 處理 Pending 狀態
+            break;
+        case Status::Approved:
+            // 處理 Approved 狀態
+            break;
+        case Status::Rejected:
+            // 處理 Rejected 狀態
+            break;
+    }
+}
+
+enum UserName: string {
+    case ADMIN = 'admin';
+    case USER = 'user';
+    case GUEST = 'guest';
+}
+
+var_dump(UserName::ADMIN->name); // ADMIN
+var_dump(UserName::ADMIN->value);// admin
 ```
 
