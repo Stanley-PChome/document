@@ -78,11 +78,11 @@ __FUNCTION__
 
 # PHP 8.0
 
-## 1. JIT
+## JIT
 ```
 ```
 
-## 2. Union Types
+## Union Types
 ```php
 #int float string bool array object null callable iterable
 function foo(int|float $number): int|float {
@@ -90,16 +90,16 @@ function foo(int|float $number): int|float {
 }
 ```
 
-## 3. Named Arguments
+## Named Arguments
 ```php
 function foo($a, $b, $c) {
-  return "{$a}-{$b}-{$c}";
+  echo "{$a}-{$b}-{$c}";
 }
 
 foo(a: 1, c: 3, b: 2);
 ```
 
-## 4. Constructor Property Promotion
+## Constructor Property Promotion
 ```php
 class Point {
     public function __construct(
@@ -109,13 +109,33 @@ class Point {
 }
 ```
 
-## 5. Match
+## Match
 ```php
 $result = match ($status) {
-    1 => 'First',
-    2 => 'Second',
+    1 => 'A',
+    2 => 'B',
+    3 => date("Ymd"),
+    4, 5 => "D",
     default => 'Unknown',
 };
+
+$age = 23;
+$result = match (true) {
+    $age >= 65 => 'senior',
+    $age >= 25 => 'adult',
+    $age >= 18 => 'young adult',
+    default => 'kid',
+};
+```
+
+## Nullsafe
+```php
+$country = $session?->user?->getAddress()?->country;
+```
+
+## Throw Expression
+```php
+$value = $foo ?? throw new Exception('Invalid value');
 ```
 
 
