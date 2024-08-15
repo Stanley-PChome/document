@@ -249,7 +249,7 @@ interface A {}
 interface B {}
 
 function process(A&B $value): void {
-    // 處理同時實現 A 和 B 的對象
+    // 處理同時實現 A 和 B 的物件
 }
 ```
 
@@ -278,7 +278,7 @@ readonly class User {
 ## Disjunctive Normal Form (DNF) Types
 ```php
 function example((A&B)|C $input): void {
-    // 这里 $input 可以是 (A&B) 或 C 类型
+    // 這裡 $input 可以是 (A&B) 或 C 類型
 }
 ```
 
@@ -292,7 +292,7 @@ class MyClass {
     use MyTrait;
 }
 
-echo MyClass::MY_CONSTANT; // 输出 'value'
+echo MyClass::MY_CONSTANT; // 輸出 'value'
 ```
 
 ## Traits 
@@ -305,7 +305,7 @@ class MyClass {
     use MyTrait;
 }
 
-echo MyClass::MY_CONSTANT; // 输出 'value'
+echo MyClass::MY_CONSTANT; // 輸出 'value'
 ```
 
 ## Dynamic Properties Deprecated
@@ -316,12 +316,54 @@ class User {
 
 $user = new User();
 $user->name = 'John'; // 正常
-$user->age = 30; // 在 PHP 8.2 中将触发一个弃用警告
+$user->age = 30; // 在 PHP 8.2 中觸發棄用警告
 ```
 
 # PHP 8.3
-## 
+## JSON
 ```php
-
+$json = '{"name": "John", "age": 30}';
+if (json_validate($json)) {
+    echo 'Valid JSON';
+} else {
+    echo 'Invalid JSON';
+输
 ```
 
+## Non-local Returns
+```php
+$callback = function () {
+    return 'This is a return value';
+};
+
+echo $callback(); // 輸出 'This is a return value'
+```
+
+## stdClass
+```php
+$object = new stdClass();
+$object->name = 'John';
+$object->age = 30;
+
+$readonlyObject = readonly($object);
+// $readonlyObject->name = 'Jane'; // 會引發錯誤，因為物件是只讀的
+```
+
+## Generics
+```php
+class Collection<T> {
+    private array $items = [];
+    
+    public function add(T $item): void {
+        $this->items[] = $item;
+    }
+
+    public function getAll(): array {
+        return $this->items;
+    }
+}
+
+$intCollection = new Collection<int>();
+$intCollection->add(1);
+$intCollection->add(2);
+```
