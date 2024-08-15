@@ -80,18 +80,18 @@ __FUNCTION__
 ```
 ```
 
-##JIT
+## JIT
 ```
 ```
 
-##Union Types
+## Union Types
 ```
 function foo(int|float $number): int|float {
     return $number;
 }
 ```
 
-##Named Arguments
+## Named Arguments
 ```
 function foo($a, $b, $c) {
   return "{$a}-{$b}-{$c}";
