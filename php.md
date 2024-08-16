@@ -282,6 +282,11 @@ print_r($squares); // 輸出 [1, 4, 9, 16]
 ## Null Coalescing Assignment Operator
 ```php
 $data['key'] ??= 'default';
+
+#等同以下
+if (!isset($data['key'])) {
+    $data['key'] = 'default';
+}
 ```
 
 ## Spread Operator in Array Expression
