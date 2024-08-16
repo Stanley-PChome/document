@@ -240,13 +240,6 @@ setObject("string"); // 無效，會拋出錯誤
 ```
 
 # PHP 7.3
-## JSON
-```php
-$json = json_decode('{"key":"value"}');
-if (json_last_error() === JSON_ERROR_NONE) {
-    echo "Valid JSON";
-}
-```
 
 ## Trailing Comma in Function Calls
 ```php
