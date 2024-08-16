@@ -287,6 +287,13 @@ if (!isset($data['key'])) {
 }
 ```
 
+```php
+$array = ['name' => 'John'];
+$array['name'] ??= 'Doe'; // 會保留 'John'
+$array['age'] ??= 30; // 會設置 'age' 為 30
+print_r($array); // 輸出 Array ( [name] => John [age] => 30 )
+```
+
 ## Spread Operator in Array Expression
 ```php
 $array1 = [1, 2, 3];
