@@ -196,14 +196,18 @@ foreach ($data as ['id' => $id, 'name' => $name]) {
     echo "$id: $name \n";
 }
 
-$data = [
+$data2 = [
     [3, 'jack', 'admin'],
     [4, 'tony', 'user'],
 ];
 
-foreach ($data as [$id, $name, $role]) {
+foreach ($data2 as [$id, $name, $role]) {
     echo "$id: $name $role \n";
 }
+
+["id" => $id, "name" => $name] = $data[1];
+
+echo "$id $name \n";
 ```
 
 ## Asynchronous Signal Handling
