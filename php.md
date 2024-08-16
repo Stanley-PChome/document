@@ -241,6 +241,15 @@ setObject("string"); // 無效，會拋出錯誤
 
 # PHP 7.3
 
+## JOIN
+```php
+try {
+    json_decode("{", false, 512, JSON_THROW_ON_ERROR); 
+} catch (\JsonException $exception) {
+    echo $exception->getMessage(); // echoes "Syntax error" 
+}
+```
+
 ## Trailing Comma in Function Calls
 ```php
 function foo($a, $b, $c) {
