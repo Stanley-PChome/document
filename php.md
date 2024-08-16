@@ -547,19 +547,6 @@ class MyClass {
 echo MyClass::MY_CONSTANT; // 輸出 'value'
 ```
 
-## Traits 
-```php
-trait MyTrait {
-    public const MY_CONSTANT = 'value';
-}
-
-class MyClass {
-    use MyTrait;
-}
-
-echo MyClass::MY_CONSTANT; // 輸出 'value'
-```
-
 ## Dynamic Properties Deprecated
 ```php
 class User {
