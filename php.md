@@ -34,8 +34,6 @@ array_intersect 交集
 
 array_intersect_key
 
-array_key_exists
-
 array_keys 回傳所有key
 
 array_values 回傳所有value 
