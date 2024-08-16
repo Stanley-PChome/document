@@ -1,6 +1,6 @@
 ## 目錄
   - [Dockerfile](#Dockerfile)
-  - [docker-compose](#docker-compose)
+  - [Docker Compose](#docker-compose)
 
 ```
 查詢版本
@@ -208,7 +208,7 @@ COPY index.php /var/www/html/index.php
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 
-docker-compose
+## Docker Compose
 ```
 #執行yml檔
 docker-compose up -d
