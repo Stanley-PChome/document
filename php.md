@@ -586,21 +586,30 @@ $readonlyObject = readonly($object);
 // $readonlyObject->name = 'Jane'; // 會引發錯誤，因為物件是只讀的
 ```
 
-## Generics
+## Dynamic class constant and Enum member
 ```php
-class Collection<T> {
-    private array $items = [];
-    
-    public function add(T $item): void {
-        $this->items[] = $item;
-    }
-
-    public function getAll(): array {
-        return $this->items;
-    }
+class MyClass {
+    public const MY_CONST = 42;
 }
 
-$intCollection = new Collection<int>();
-$intCollection->add(1);
-$intCollection->add(2);
+$constName = 'MY_CONST';
+
+echo MyClass::{$constName};
+```
+
+```php
+enum MyEnum: int {
+    case MyMember = 42;
+}
+
+$enumName = 'MyMember';
+
+echo MyEnum::{$enumName}->value;
+```
+
+```php
+class Foo {}
+$constant = 'class';
+
+echo Foo::{$constant}; // "Foo"
 ```
