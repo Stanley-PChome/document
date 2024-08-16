@@ -564,7 +564,7 @@ $user->age = 30; // 在 PHP 8.2 中觸發棄用警告
 ## JSON
 ```php
 $json = '{"name": "John", "age": 30}';
-json_validate($json) ? echo 'Valid JSON' : echo 'Invalid JSON';
+echo json_validate($json) ? 'Valid JSON' : 'Invalid JSON';
 ```
 
 ## Non-local Returns
