@@ -556,6 +556,8 @@ class User {
 $user = new User();
 $user->name = 'John'; // 正常
 $user->age = 30; // 在 PHP 8.2 中觸發棄用警告
+
+## __get __set例外
 ```
 
 # PHP 8.3
