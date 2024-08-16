@@ -192,18 +192,16 @@ $data = [
     ['id' => 2, 'name' => 'Jane'],
 ];
 
-foreach ($data as ['id' => $id, 'name' => $name]) {
+foreach ($data as ['id' => $id, 'name' => $name]) 
     echo "$id: $name \n";
-}
 
 $data2 = [
     [3, 'jack', 'admin'],
     [4, 'tony', 'user'],
 ];
 
-foreach ($data2 as [$id, $name, $role]) {
+foreach ($data2 as [$id, $name, $role]) 
     echo "$id: $name $role \n";
-}
 
 ["id" => $id, "name" => $name] = $data[1];
 
