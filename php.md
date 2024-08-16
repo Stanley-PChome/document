@@ -493,14 +493,6 @@ $result = [...$array1, ...$array2];
 print_r($result); // 輸出 Array ( [foo] => bar [baz] => qux )
 ```
 
-## Null Coalescing Assignment Operator
-```php
-$array = ['name' => 'John'];
-$array['name'] ??= 'Doe'; // 會保留 'John'
-$array['age'] ??= 30; // 會設置 'age' 為 30
-print_r($array); // 輸出 Array ( [name] => John [age] => 30 )
-```
-
 ## Intersection Types
 ```php
 interface A {}
