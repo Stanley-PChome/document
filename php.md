@@ -378,6 +378,31 @@ $country = $session?->user?->getAddress()?->country;
 $value = $foo ?? throw new Exception('Invalid value');
 ```
 
+## ::class
+```php
+
+namespace App\Demos;
+
+use Foo\Bar;
+use Bar\Baz as BBaz;
+
+class Demo {}
+
+// `use` statement is resolved:
+echo Bar::class; // "Foo\Bar"
+
+// `use` X `as` Y is resolved:
+echo BBaz::class; // "Bar\Baz"
+
+// Current namespace is resolved:
+echo Demo::class; // "App\Demos\Demo"
+在 PHP 8.0 之前，::class物件上不允許使用魔法常數。
+
+$object = new Foo\Bar();
+echo $object::class;
+// "Foo\Bar"
+```
+
 # PHP 8.1
 ## Enumerations
 ```php
