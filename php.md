@@ -396,11 +396,10 @@ echo BBaz::class; // "Bar\Baz"
 
 // Current namespace is resolved:
 echo Demo::class; // "App\Demos\Demo"
-在 PHP 8.0 之前，::class物件上不允許使用魔法常數。
 
+#在 PHP 8.0 之前，::class物件上不允許使用魔法常數。
 $object = new Foo\Bar();
-echo $object::class;
-// "Foo\Bar"
+echo $object::class;// "Foo\Bar"
 ```
 
 # PHP 8.1
