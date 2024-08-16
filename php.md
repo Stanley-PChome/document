@@ -326,7 +326,7 @@ $price = 1_000_000; // 相當於 1000000
 
 ## Union Types
 ```php
-#int float string bool array object null callable iterable
+#int float string bool array object null callable iterable mixed 
 function foo(int|float $number): int|float {
     return $number;
 }
