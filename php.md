@@ -217,19 +217,6 @@ $data = [
 echo "$id $name \n";
 ```
 
-## Asynchronous Signal Handling
-```php
-pcntl_async_signals(true); // 啟用異步信號處理
-
-pcntl_signal(SIGINT, function() {
-    echo "SIGINT caught!";
-});
-
-while (true) {
-    sleep(1);
-}
-```
-
 ## Square Bracket Syntax for Array Destructuring
 ```php
 [$a, $b] = [1, 2];
