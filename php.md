@@ -432,7 +432,9 @@ function handleStatus(Status $status): void {
             break;
     }
 }
+```
 
+```php
 enum UserName: string {
     case ADMIN = 'admin';
     case USER = 'user';
