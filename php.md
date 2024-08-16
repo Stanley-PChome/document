@@ -477,19 +477,6 @@ $fiber->start(); // 輸出 "Fiber started"
 $fiber->resume(); // 輸出 "Fiber resumed"
 ```
 
-## Fibers
-```php
-#實現協程（coroutines）和更高效的異步編程
-$fiber = new Fiber(function (): void {
-    echo "Fiber started\n";
-    Fiber::suspend();
-    echo "Fiber resumed\n";
-});
-
-$fiber->start(); // 輸出 "Fiber started"
-$fiber->resume(); // 輸出 "Fiber resumed"
-```
-
 ## Array Unpacking with String Keys
 ```php
 $array1 = ['foo' => 'bar'];
