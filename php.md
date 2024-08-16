@@ -568,7 +568,6 @@ if (json_validate($json)) {
     echo 'Valid JSON';
 } else {
     echo 'Invalid JSON';
-输
 ```
 
 ## Non-local Returns
