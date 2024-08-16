@@ -12,6 +12,10 @@
 
 ## 筆記
 ```
+getopt
+
+file_get_contents
+
 array
 
 array_chunk
