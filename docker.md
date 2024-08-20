@@ -130,8 +130,10 @@ ENV  #設定環境變數(容器中使用)
 VOLUME  #持久化資料
 
 WORKDIR #設置工作目錄
+```
 
-範例PHP
+```
+# PHP7.4
 FROM ubuntu:20.04
 
 RUN apt-get update \
@@ -152,36 +154,10 @@ COPY index.php /var/www/html/index.php
 #EXPOSE 80
 
 CMD ["apachectl", "-D", "FOREGROUND"]
-
-範例PYTHON
-FROM ubuntu:latest
-
-ENV DEBIAN_FRONTEND=noninteractive    #設置環境變數，防止互動式安裝過程中要求輸入
-
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    python3-venv 
-
-RUN python3 -m venv /venv # 創建虛擬環境
-
-RUN /venv/bin/pip install --upgrade pip # 使用虛擬環境中的 pip 安裝套件
-RUN /venv/bin/pip install Django 
-
-#RUN mkdir -p /var/www/html 
-#WORKDIR /var/www/html
-
-#RUN /venv/bin/django-admin startproject mysite
-
-WORKDIR /var/www/html/mysite
-
-EXPOSE 8000
-
-CMD ["/venv/bin/python", "manage.py", "runserver", "0.0.0.0:8000"]
-
 ```
 
 ```
+# PHP8.3
 FROM ubuntu:20.04
 
 RUN apt-get update \
@@ -209,6 +185,34 @@ COPY index.php /var/www/html/index.php
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 
+```
+範例PYTHON
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive    #設置環境變數，防止互動式安裝過程中要求輸入
+
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-venv 
+
+RUN python3 -m venv /venv # 創建虛擬環境
+
+RUN /venv/bin/pip install --upgrade pip # 使用虛擬環境中的 pip 安裝套件
+RUN /venv/bin/pip install Django 
+
+#RUN mkdir -p /var/www/html 
+#WORKDIR /var/www/html
+
+#RUN /venv/bin/django-admin startproject mysite
+
+WORKDIR /var/www/html/mysite
+
+EXPOSE 8000
+
+CMD ["/venv/bin/python", "manage.py", "runserver", "0.0.0.0:8000"]
+```
+
 ## Docker Compose
 ```
 #執行yml檔
@@ -230,7 +234,9 @@ services
 networks
   <network-name>
     driver: <type>  #bridge:容器可以連接到這個網絡並與主機以及其他容器通信
+```
 
+```
 yml範例
 version: "3.8"
 
@@ -276,5 +282,4 @@ volumes:
 networks:
   my-network:
     driver: bridge
-
 ```
