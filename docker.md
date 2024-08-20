@@ -65,11 +65,13 @@ docker run -it <images-name>
     --name  #別名
     --network <network-name>  #指定網路設定
         none： 在執行 container 時，網路功能是關閉的，所以無法與此 container 連線
-        container： 使用相同的 Network Namespace，所以 container1 的 IP 是 172.17.0.2 那 container2 的 IP 也會是 172.17.0.2
-        host： container 的網路設定和實體主機使用相同的網路設定，所以 container 裡面也就可以修改實體機器的網路設定，因此使用此模式
-                需要考慮網路安全性上的問題
+        container： 使用相同的 Network Namespace，所以 container1 的 IP 是 172.17.0.2 那
+                    container2 的 IP 也會是 172.17.0.2
+        host： container 的網路設定和實體主機使用相同的網路設定，所以 container 裡面也就可以修改實體機器的網路設定，
+                  因此使用此模式需要考慮網路安全性上的問題
         bridge： Docker 預設就是使用此網路模式，這種網路模式就像是 NAT 的網路模式，例如實體主機的 IP 是 192.168.1.10
-                它會對應到 Container裡面的 172.17.0.2，在啟動 Docker 的 service 時會有一個 docker0 的網路卡就是在做此網路的橋接。
+                它會對應到 Container裡面的 172.17.0.2，在啟動 Docker 的 service 時會有一個 docker0 的網路卡
+                就是在做此網路的橋接。
         overlay： container 之間可以在不同的實體機器上做連線，例如 Host1 有一個 container1，然後 Host2 有一個
                 container2，container1就可以使用 overlay 的網路模式和 container2 做網路的連線。
 
@@ -166,7 +168,8 @@ RUN apt-get update \
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     php8.3 \
-    php8.3-cli php8.3-fpm php8.3-mysql php8.3-xml php8.3-mbstring php8.3-curl php8.3-zip php8.3-gd \
+    php8.3-cli php8.3-fpm php8.3-mysql php8.3-xml php8.3-mbstring php8.3-curl \
+    php8.3-zip php8.3-gd \
     libapache2-mod-php8.3 \
     vim \
     && a2enmod php8.3
