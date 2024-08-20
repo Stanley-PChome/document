@@ -82,7 +82,10 @@ git pull
 
 指定遠端Repository拉取並合併至當前分支
 git pull <remote-name> <branch>
+```
 
+## push
+```
 發佈至遠端分支
 git push
 
