@@ -89,6 +89,9 @@ git checkout <branch-name>
 建立並切換至該分支
 git checkout -b <branch-name>
 
+強制切換至該 commit
+git checkout -f <hash>
+
 切換至該 commit
 git checkout <hash>
 ```
