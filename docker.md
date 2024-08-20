@@ -76,9 +76,11 @@ docker run -it <images-name>
                 然後 Host2 有一個container2，container1就可以使用 overlay 的網路模式
                 和 container2 做網路的連線。
 
-進入容器
-docker attach <container-id>  #退出後會停止容器
-docker exec -it <container-id> /bin/bash  #退出後不會停止容器
+進入容器(退出後會停止容器)
+docker attach <container-id> 
+
+進入容器(退出後不會停止容器)
+docker exec -it <container-id> /bin/bash
 
 刪除容器
 docker rm <container-id>
