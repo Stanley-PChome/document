@@ -14,6 +14,9 @@ git log
 
 顯示所有標籤
 git tag
+
+還原未提交的更改
+git restore
 ```
 
 ## add
