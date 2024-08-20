@@ -14,25 +14,31 @@ git log
 
 顯示所有標籤
 git tag
+```
 
+## add
+```
 將所有檔案或資料夾加入版本控制
 git add
 
 將指定的檔案或資料夾加入版本控制
 git add [檔案或資料夾]
+``` 
 
+## reset
+```
 將所有檔案或資料夾移出版本控制
 git reset
 
 將指定的檔案或資料夾移出版本控制
 git reset [檔案或資料夾]
 
-提交目前的異動
-git commit
+強制恢復到指定的 commit（透過 Hash 值）
+git reset --hard [HASH]
+```
 
-提交目前的異動並設定摘要說明
-git commit -m "提交說明內容"
-
+## fetch
+```
 獲取遠端 Repository 所有 branch 更新
 git fetch
 
@@ -42,6 +48,15 @@ git fetch <remote-name>
 獲取指定遠端 Repository 特定 branch 更新
 git fetch <remote-name> <branch-name>
 ```
+
+## commit
+```
+提交目前的異動
+git commit
+
+提交目前的異動並設定摘要說明
+git commit -m "提交說明內容"
+``` 
 
 ## branch
 ```
@@ -128,9 +143,3 @@ git rebase --abort
 交互式 rebase (重新排序提交、合并提交、修改提交消息)
 git rebase -i <commit>
 ```
-
-## reset
-```
-強制恢復到指定的 commit（透過 Hash 值）
-git reset --hard [HASH]
-``` 
