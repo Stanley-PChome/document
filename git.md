@@ -17,6 +17,18 @@ git tag
 
 還原未提交的更改
 git restore
+
+暫存更改
+git stash
+
+列出暫存更改
+git stash list
+
+恢復暫存更改並刪除
+git stash pop
+
+清除所有暫存條目
+git stash clear
 ```
 
 ## add
@@ -35,6 +47,15 @@ git reset
 
 將指定的檔案或資料夾移出版本控制
 git reset [檔案或資料夾]
+
+只重置 HEAD，保留暫存區和工作目錄中的更改
+git reset --soft
+
+重置 HEAD 和暫存區，保留工作目錄中的更改（預設行為）
+git reset --mixed
+
+完全重置 HEAD、暫存區和工作目錄，丟失未提交的更改
+git reset --hard
 
 強制恢復到指定的 commit（透過 Hash 值）
 git reset --hard [HASH]
