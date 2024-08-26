@@ -16,7 +16,7 @@ git log
 git tag
 
 還原未提交的更改
-git restore
+git restore [檔案或資料夾]
 
 暫存更改
 git stash
