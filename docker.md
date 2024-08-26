@@ -192,7 +192,7 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 
 ```
-範例PYTHON
+# PYTHON3
 FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive    #設置環境變數，防止互動式安裝過程中要求輸入
