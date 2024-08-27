@@ -34,7 +34,7 @@ git stash clear
 ## add
 ```
 將所有檔案或資料夾加入版本控制
-git add
+git add .
 
 將指定的檔案或資料夾加入版本控制
 git add [檔案或資料夾]
