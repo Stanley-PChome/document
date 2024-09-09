@@ -18,6 +18,9 @@ git tag
 還原未提交的更改
 git restore [檔案或資料夾]
 
+暫存區移除
+git restore --staged
+
 暫存更改
 git stash
 
