@@ -90,50 +90,82 @@ echo $book2->getTitle() . "\n";  // Guns, Germs, and Steel
 ```php
 <?php
 
-namespace RefactoringGuru\Prototype\Conceptual;
+namespace RefactoringGuru\Prototype\RealWorld;
 
 /**
- * The example class that has cloning ability. We'll see how the values of field
- * with different types will be cloned.
+ * Prototype.
  */
-class Prototype
+class Page
 {
-    public $primitive;
-    public $component;
-    public $circularReference;
+    private $title;
+
+    private $body;
 
     /**
-     * PHP has built-in cloning support. You can `clone` an object without
-     * defining any special methods as long as it has fields of primitive types.
-     * Fields containing objects retain their references in a cloned object.
-     * Therefore, in some cases, you might want to clone those referenced
-     * objects as well. You can do this in a special `__clone()` method.
+     * @var Author
+     */
+    private $author;
+
+    private $comments = [];
+
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+    // +100 private fields.
+
+    public function __construct(string $title, string $body, Author $author)
+    {
+        $this->title = $title;
+        $this->body = $body;
+        $this->author = $author;
+        $this->author->addToPage($this);
+        $this->date = new \DateTime();
+    }
+
+    public function addComment(string $comment): void
+    {
+        $this->comments[] = $comment;
+    }
+
+    /**
+     * You can control what data you want to carry over to the cloned object.
+     *
+     * For instance, when a page is cloned:
+     * - It gets a new "Copy of ..." title.
+     * - The author of the page remains the same. Therefore we leave the
+     * reference to the existing object while adding the cloned page to the list
+     * of the author's pages.
+     * - We don't carry over the comments from the old page.
+     * - We also attach a new date object to the page.
      */
     public function __clone()
     {
-        $this->component = clone $this->component;
-
-        // Cloning an object that has a nested object with backreference
-        // requires special treatment. After the cloning is completed, the
-        // nested object should point to the cloned object, instead of the
-        // original object.
-        $this->circularReference = clone $this->circularReference;
-        $this->circularReference->prototype = $this;
+        $this->title = "Copy of " . $this->title;
+        $this->author->addToPage($this);
+        $this->comments = [];
+        $this->date = new \DateTime();
     }
 }
 
-class ComponentWithBackReference
+class Author
 {
-    public $prototype;
+    private $name;
 
     /**
-     * Note that the constructor won't be executed during cloning. If you have
-     * complex logic inside the constructor, you may need to execute it in the
-     * `__clone` method as well.
+     * @var Page[]
      */
-    public function __construct(Prototype $prototype)
+    private $pages = [];
+
+    public function __construct(string $name)
     {
-        $this->prototype = $prototype;
+        $this->name = $name;
+    }
+
+    public function addToPage(Page $page): void
+    {
+        $this->pages[] = $page;
     }
 }
 
@@ -142,34 +174,18 @@ class ComponentWithBackReference
  */
 function clientCode()
 {
-    $p1 = new Prototype();
-    $p1->primitive = 245;
-    $p1->component = new \DateTime();
-    $p1->circularReference = new ComponentWithBackReference($p1);
+    $author = new Author("John Smith");
+    $page = new Page("Tip of the day", "Keep calm and carry on.", $author);
 
-    $p2 = clone $p1;
-    if ($p1->primitive === $p2->primitive) {
-        echo "primitive A<br>";
-    } else {
-        echo "primitive B<br>";
-    }
-    if ($p1->component === $p2->component) {
-        echo "component A<br>";
-    } else {
-        echo "component B<br>";
-    }
+    // ...
 
-    if ($p1->circularReference === $p2->circularReference) {
-        echo "circularReference A<br>";
-    } else {
-        echo "circularReference B<br>";
-    }
+    $page->addComment("Nice tip, thanks!");
 
-    if ($p1->circularReference->prototype === $p2->circularReference->prototype) {
-        echo "circularReference->prototype A<br>";
-    } else {
-        echo "circularReference->prototype B<br>";
-    }
+    // ...
+
+    $draft = clone $page;
+    echo "Dump of the clone. Note that the author is now referencing two objects.<br><br>";
+    print_r($draft);
 }
 
 clientCode();
