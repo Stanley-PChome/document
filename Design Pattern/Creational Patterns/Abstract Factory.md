@@ -39,6 +39,12 @@ Abstract Factory 的優點與缺點
       如需要創建不同主題風格的 UI 元素時。
   需要隔離物件的生成邏輯：
       避免直接使用 new 關鍵字創建具體產品，從而提高系統的靈活性。
+
+abstract Factory 與其他設計模式的結合
+  Factory Method（工廠方法模式）：
+    通常會在 Abstract Factory 中使用多個 Factory Method 來創建具體產品。
+  Singleton（單例模式）：
+    具體工廠通常被設計成單例，以確保所有工廠的使用者都能得到相同的工廠實例。
 ```
 
 ```php
