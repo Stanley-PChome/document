@@ -49,16 +49,6 @@ class Singleton
     protected function __construct() { }
 
     /**
-     * Cloning and unserialization are not permitted for singletons.
-     */
-    protected function __clone() { }
-
-    public function __wakeup()
-    {
-        throw new \Exception("Cannot unserialize singleton");
-    }
-
-    /**
      * The method you use to get the Singleton's instance.
      */
     public static function getInstance()
