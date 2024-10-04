@@ -4,10 +4,14 @@ Factory Method（工廠方法模式） 是一種創建型設計模式，定義�
 
 Factory Method 模式結構與概念
   Factory Method 模式包含以下角色：
-    Product：抽象產品，定義了產品物件的接口或抽象類別。
-    Concrete Product：具體產品類別，實現了抽象產品接口。
-    Creator（工廠類）：定義了工廠方法（通常為 createProduct()），來返回 Product 類別的實例，但並不具體定義哪個類別。
-    Concrete Creator（具體工廠類別）：實現 Creator 並定義 createProduct() 方法來返回具體產品。
+    Product：
+      抽象產品，定義了產品物件的接口或抽象類別。
+    Concrete Product：
+      具體產品類別，實現了抽象產品接口。
+    Creator（工廠類）：
+      定義了工廠方法（通常為 createProduct()），來返回 Product 類別的實例，但並不具體定義哪個類別。
+    Concrete Creator（具體工廠類別）：
+      實現 Creator 並定義 createProduct() 方法來返回具體產品。
 
 Factory Method 的優點與缺點
   優點：
