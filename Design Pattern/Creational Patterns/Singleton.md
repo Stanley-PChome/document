@@ -1,6 +1,5 @@
 
-```
-<?php
+```php
 
 namespace RefactoringGuru\Singleton\RealWorld;
 
