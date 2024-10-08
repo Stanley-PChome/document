@@ -2,23 +2,22 @@
 Abstract Factory（抽象工廠模式） 是一種創建型設計模式，允許在不指定具體類別的情況下，創建一組
 相關或依賴的物件。此模式主要用於處理多個產品等級結構（product hierarchies），通常涉及到一系列相互關聯的產品。
 
-Abstract Factory 模式的結構與概念
+結構與概念
   抽象工廠模式允許客戶端使用工廠方法創建一組「相關」的產品，而不需要了解具體產品的類別。比如，
   針對不同的使用環境或平台（如 Windows 和 Mac），我們可以通過同一抽象工廠來生產不同的 UI 元素（如按鈕、視窗等）。
 
-  抽象工廠模式角色：
-    Abstract Factory（抽象工廠）：
-      定義了所有產品創建的方法。
-    Concrete Factory（具體工廠）：
-      實現抽象工廠的方法，負責具體產品物件的生成。
-    Abstract Product（抽象產品）：
-      定義所有具體產品的共同接口。
-    Concrete Product（具體產品）：
-      具體產品的實現類別。
-    Client（客戶端）：
-      通過抽象工廠來取得抽象產品的具體實例，而不需要知道具體工廠和具體產品的類別。
+  Abstract Factory（抽象工廠）：
+    定義了所有產品創建的方法。
+  Concrete Factory（具體工廠）：
+    實現抽象工廠的方法，負責具體產品物件的生成。
+  Abstract Product（抽象產品）：
+    定義所有具體產品的共同接口。
+  Concrete Product（具體產品）：
+    具體產品的實現類別。
+  Client（客戶端）：
+    通過抽象工廠來取得抽象產品的具體實例，而不需要知道具體工廠和具體產品的類別。
 
-Abstract Factory 的優點與缺點
+優點與缺點
   優點：
     符合開放封閉原則（OCP）：
       新增產品系列時，不需要更改現有的工廠代碼。
@@ -40,7 +39,7 @@ Abstract Factory 的優點與缺點
   需要隔離物件的生成邏輯：
       避免直接使用 new 關鍵字創建具體產品，從而提高系統的靈活性。
 
-abstract Factory 與其他設計模式的結合
+與其他設計模式的結合
   Factory Method（工廠方法模式）：
     通常會在 Abstract Factory 中使用多個 Factory Method 來創建具體產品。
   Singleton（單例模式）：
