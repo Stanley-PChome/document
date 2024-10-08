@@ -2,8 +2,7 @@
 Factory Method（工廠方法模式） 是一種創建型設計模式，定義了一個用來創建物件的接口，但由子類別決定
 要實例化的類別是哪一個。這樣做可以在不改變客戶端程式碼的情況下來引入新的產品類型，從而實現對擴展開放、對修改封閉（OCP 原則）。
 
-Factory Method 模式結構與概念
-  Factory Method 模式包含以下角色：
+結構與概念
     Product：
       抽象產品，定義了產品物件的接口或抽象類別。
     Concrete Product：
@@ -13,7 +12,7 @@ Factory Method 模式結構與概念
     Concrete Creator（具體工廠類別）：
       實現 Creator 並定義 createProduct() 方法來返回具體產品。
 
-Factory Method 的優點與缺點
+優點與缺點
   優點：
     遵循開放封閉原則（OCP）：
       當需要引入新產品時，只需創建一個新的 Concrete Product 類別和對應的 Concrete Factory 類別即可，而無需更改現有代碼。
@@ -27,16 +26,17 @@ Factory Method 的優點與缺點
     抽象與具體類別的依賴增加：
       所有的具體工廠都需要實現抽象工廠中的工廠方法，這導致系統的複雜度提升。
 
-Factory Method 模式的應用情境
+應用情境
   當需要創建多種類型的物件，且這些物件有共同的接口或抽象父類。
   當物件的創建涉及複雜邏輯時（如需要根據不同的參數創建不同類型的物件）。
   當物件的創建應該由子類別來確定，而不是基礎類別。
   在架構中需要隱藏具體產品的實例化過程時。
 
 延伸：將 Factory Method 與其他模式結合
-  Factory Method 通常與以下設計模式搭配使用：
-    Abstract Factory（抽象工廠模式）：抽象工廠模式可以視為多個 Factory Method 的組合，允許創建一系列相關的產品。
-    Singleton（單例模式）：某些情況下，工廠類別本身可以被設計成 Singleton，確保只有一個工廠實例。
+  Abstract Factory（抽象工廠模式）：
+    抽象工廠模式可以視為多個 Factory Method 的組合，允許創建一系列相關的產品。
+  Singleton（單例模式）：
+    某些情況下，工廠類別本身可以被設計成 Singleton，確保只有一個工廠實例。
 ```
 
 ```php
