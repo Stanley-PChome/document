@@ -50,11 +50,11 @@ MySQL 隔離級別有以下幾種：
 ```
 ```
 效能與鎖定的綜合比較
-隔離級別	效能	是否鎖資料	特點
-READ UNCOMMITTED	最高	不鎖資料	無一致性保證，適合快速讀取需求。
-READ COMMITTED	高	部分鎖資料	避免脏讀，適合大多數應用場景。
-REPEATABLE READ	中	會鎖資料（含間隙鎖）	避免脏讀與不可重複讀，是 MySQL 默認選擇。
-SERIALIZABLE	最低	會鎖資料（讀寫都鎖）	強一致性，但效能低，僅適用於特殊場景。
+| 隔離級別            | 效能 | 是否鎖資料           |  特點 |
+| READ UNCOMMITTED   | 最高 | 不鎖資料	            |  無一致性保證，適合快速讀取需求。
+| READ COMMITTED     | 高   | 部分鎖資料	          |  避免脏讀，適合大多數應用場景。
+| REPEATABLE READ    | 中   | 會鎖資料（含間隙鎖）  |  避免脏讀與不可重複讀，是 MySQL 默認選擇。
+| SERIALIZABLE       | 低   | 會鎖資料（讀寫都鎖）  |  強一致性，但效能低，僅適用於特殊場景。
 
 如果需要最高效能且對一致性要求不高，選擇 READ UNCOMMITTED 或 READ COMMITTED。
 如果需要一致性（避免不可重複讀或幻讀），選擇 REPEATABLE READ。
