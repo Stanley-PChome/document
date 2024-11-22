@@ -47,8 +47,9 @@ MySQL 隔離級別有以下幾種：
   適用場景：
     極端情況下需要強一致性的場景，如財務系統。
 
+-----
 [Transaction 併發錯誤與隔離層級](https://oldmo860617.medium.com/transaction-%E4%BD%B5%E7%99%BC%E9%8C%AF%E8%AA%A4%E8%88%87%E9%9A%94%E9%9B%A2%E5%B1%A4%E7%B4%9A-51b8af6178ae)
-
+-----
 ```
 
 -----
